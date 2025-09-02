@@ -1,7 +1,8 @@
 # GP2FFB Config Tool
 <div align="center">
-<img width="1000" height="500" alt="imagenICR2FFB" src="https://github.com/user-attachments/assets/420ea700-e65f-4150-aeb4-87e54cb372d7" />
+  <img width="1024" height="600" alt="logo1" src="https://github.com/user-attachments/assets/336c1fa6-e614-4b11-8b01-e51f5b76b25e" />
 </div>
+
 
 ## A simple UI for the GP2FFB plugin for Grand Prix 2
 
