@@ -45,7 +45,7 @@
     <None Update="ffb.ini">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Update="ICR2FFB.exe">
+    <None Update="GP2FFB.exe">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
   </ItemGroup>

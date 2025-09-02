@@ -1,0 +1,13 @@
+[INFO] Successfully loaded FFB settings
+[INFO] Target device: FANATEC Wheel
+[INFO] Initializing DirectInput...
+[INFO] Searching for device: FANATEC Wheel
+[ERROR] Device not found: FANATEC Wheel
+[ERROR] Failed to initialize DirectInput or find device: FANATEC Wheel
+[ERROR] Available devices:
+[INFO] Enumerating available game controllers:
+[INFO] Available device 1: vJoy Device
+[INFO] Available device 2: DC Simracing Pedals
+[INFO] Available device 3: DIY_FFB_PEDAL_JOYSTICK
+[INFO] Device enumeration complete
+[ERROR] Check your ffb.ini file - device name must match exactly

@@ -56,13 +56,13 @@
             panel3 = new Panel();
             buttonRefresh = new Button();
             comboBoxDirectInput = new ComboBox();
-            comboBoxVersion = new ComboBox();
             label9 = new Label();
             label8 = new Label();
             label7 = new Label();
             label11 = new Label();
             buttonSave = new Button();
             buttonRun = new Button();
+            label10 = new Label();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)numericUpDownDeadzone).BeginInit();
             ((System.ComponentModel.ISupportInitialize)numericUpDownForce).BeginInit();
@@ -320,9 +320,9 @@
             // panel3
             // 
             panel3.BorderStyle = BorderStyle.FixedSingle;
+            panel3.Controls.Add(label10);
             panel3.Controls.Add(buttonRefresh);
             panel3.Controls.Add(comboBoxDirectInput);
-            panel3.Controls.Add(comboBoxVersion);
             panel3.Controls.Add(label9);
             panel3.Controls.Add(label8);
             panel3.Controls.Add(label7);
@@ -348,15 +348,6 @@
             comboBoxDirectInput.Name = "comboBoxDirectInput";
             comboBoxDirectInput.Size = new Size(165, 23);
             comboBoxDirectInput.TabIndex = 6;
-            // 
-            // comboBoxVersion
-            // 
-            comboBoxVersion.FormattingEnabled = true;
-            comboBoxVersion.Items.AddRange(new object[] { "ICR2DOS", "ICR2REND" });
-            comboBoxVersion.Location = new Point(88, 70);
-            comboBoxVersion.Name = "comboBoxVersion";
-            comboBoxVersion.Size = new Size(161, 23);
-            comboBoxVersion.TabIndex = 8;
             // 
             // label9
             // 
@@ -391,9 +382,9 @@
             label11.AutoSize = true;
             label11.Location = new Point(12, 303);
             label11.Name = "label11";
-            label11.Size = new Size(276, 15);
+            label11.Size = new Size(273, 15);
             label11.TabIndex = 3;
-            label11.Text = "ICR2FFB Plugin by GPLaps | Config UI by Menkaura";
+            label11.Text = "GP2FFB Plugin by GPLaps | Config UI by Menkaura";
             // 
             // buttonSave
             // 
@@ -415,6 +406,15 @@
             buttonRun.UseVisualStyleBackColor = true;
             buttonRun.Click += buttonRun_Click;
             // 
+            // label10
+            // 
+            label10.AutoSize = true;
+            label10.Location = new Point(91, 73);
+            label10.Name = "label10";
+            label10.Size = new Size(45, 15);
+            label10.TabIndex = 7;
+            label10.Text = "x86GP2";
+            // 
             // MainDialog
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -429,7 +429,7 @@
             Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "MainDialog";
             ShowInTaskbar = false;
-            Text = "ICR2FFB Config";
+            Text = "GP2FFB Config";
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)numericUpDownDeadzone).EndInit();
@@ -463,7 +463,6 @@
         private Label label7;
         protected internal Label label8;
         private Label label9;
-        private ComboBox comboBoxVersion;
         private Label label11;
         private Button buttonSave;
         private Button buttonRun;
@@ -481,5 +480,6 @@
         private ComboBox comboBoxConstant;
         private ComboBox comboBoxDirectInput;
         private Button buttonRefresh;
+        private Label label10;
     }
 }
