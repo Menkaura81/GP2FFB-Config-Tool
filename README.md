@@ -12,8 +12,11 @@ GP2FFB Config Tool reads your `.ini` file and displays the values in the window.
 To install, just extract the files into the same folder as the plugin.
 
 <div align="center">
-  <img width="389" height="379" alt="image" src="https://github.com/user-attachments/assets/779e4a73-22ad-484c-8475-fe3558bf16e0" />
+  <img width="389" height="359" alt="image" src="https://github.com/user-attachments/assets/d3b360a7-f221-4443-a386-ce61eb269a64" />
 </div>
+
+
+
 
 THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
 IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
