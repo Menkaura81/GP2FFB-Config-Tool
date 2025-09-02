@@ -54,6 +54,7 @@
             label12 = new Label();
             label6 = new Label();
             panel3 = new Panel();
+            label10 = new Label();
             buttonRefresh = new Button();
             comboBoxDirectInput = new ComboBox();
             label9 = new Label();
@@ -62,7 +63,6 @@
             label11 = new Label();
             buttonSave = new Button();
             buttonRun = new Button();
-            label10 = new Label();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)numericUpDownDeadzone).BeginInit();
             ((System.ComponentModel.ISupportInitialize)numericUpDownForce).BeginInit();
@@ -331,6 +331,15 @@
             panel3.Size = new Size(257, 112);
             panel3.TabIndex = 2;
             // 
+            // label10
+            // 
+            label10.AutoSize = true;
+            label10.Location = new Point(91, 73);
+            label10.Name = "label10";
+            label10.Size = new Size(45, 15);
+            label10.TabIndex = 7;
+            label10.Text = "x86GP2";
+            // 
             // buttonRefresh
             // 
             buttonRefresh.Image = (Image)resources.GetObject("buttonRefresh.Image");
@@ -405,15 +414,6 @@
             buttonRun.Text = "Run";
             buttonRun.UseVisualStyleBackColor = true;
             buttonRun.Click += buttonRun_Click;
-            // 
-            // label10
-            // 
-            label10.AutoSize = true;
-            label10.Location = new Point(91, 73);
-            label10.Name = "label10";
-            label10.Size = new Size(45, 15);
-            label10.TabIndex = 7;
-            label10.Text = "x86GP2";
             // 
             // MainDialog
             // 
