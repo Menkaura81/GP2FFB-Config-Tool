@@ -10,7 +10,7 @@ namespace WinFormsApp1
         // ini file lines
         String[] iniLines;
         // ini values
-        private String device;        
+        private String device;
         private int force;
         private int deadzone;
         private String invert;
@@ -22,7 +22,7 @@ namespace WinFormsApp1
         private int brakingScale;
         private String spring;
         // values line in .ini file
-        private readonly int DEVICE_LINE = 2;        
+        private readonly int DEVICE_LINE = 2;
         private readonly int FORCE_LINE = 6;
         private readonly int DEADZONE_LINE = 9;
         private readonly int INVERT_LINE = 12;
@@ -30,9 +30,11 @@ namespace WinFormsApp1
         private readonly int CONSTANT_LINE = 25;
         private readonly int CONSTANT_SCALE_LINE = 26;
         private readonly int BRAKING_SCALE_LINE = 29;
-        private readonly int DAMPER_LINE = 32;
-        private readonly int DAMPER_SCALE_LINE = 33;
-        private readonly int SPRING_LINE = 39;
+        private readonly int VIBRATION_LINE = 32;
+        private readonly int VIBRATION_SCALE_LINE = 33;
+        private readonly int DAMPER_LINE = 36;
+        private readonly int DAMPER_SCALE_LINE = 37;
+        private readonly int SPRING_LINE = 43;
         // DirectInput
         private static DirectInput directInput;
         private static IList<DeviceInstance> devices;
@@ -153,7 +155,7 @@ namespace WinFormsApp1
             }*/
 
             // Get values 
-            device = iniLines[DEVICE_LINE].Substring("Device: ".Length).Trim();            
+            device = iniLines[DEVICE_LINE].Substring("Device: ".Length).Trim();
             force = int.Parse(iniLines[FORCE_LINE].Substring("Force: ".Length).Trim());
             deadzone = int.Parse(iniLines[DEADZONE_LINE].Substring("Deadzone: ".Length).Trim());
             invert = iniLines[INVERT_LINE].Substring("Invert: ".Length);
@@ -166,7 +168,7 @@ namespace WinFormsApp1
             spring = iniLines[SPRING_LINE].Substring("Spring: ".Length);
             // Clean ini string            
             int pos = iniLines[DEVICE_LINE].IndexOf(":");
-            iniLines[DEVICE_LINE] = iniLines[DEVICE_LINE].Substring(0, pos + 1);            
+            iniLines[DEVICE_LINE] = iniLines[DEVICE_LINE].Substring(0, pos + 1);
             pos = iniLines[FORCE_LINE].IndexOf(":");
             iniLines[FORCE_LINE] = iniLines[FORCE_LINE].Substring(0, pos + 1);
             pos = iniLines[DEADZONE_LINE].IndexOf(":");
@@ -256,7 +258,7 @@ namespace WinFormsApp1
          */
         private void writeIni()
         {
-            device = comboBoxDirectInput.SelectedItem.ToString();            
+            device = comboBoxDirectInput.SelectedItem.ToString();
             force = (int)numericUpDownForce.Value;
             deadzone = (int)numericUpDownDeadzone.Value;
             invert = comboBoxInvertFFB.SelectedItem.ToString();
@@ -276,7 +278,7 @@ namespace WinFormsApp1
                 if (i == DEVICE_LINE)
                 {
                     ini += " " + device;
-                }                
+                }
                 else if (i == FORCE_LINE)
                 {
                     ini += " " + force;
@@ -426,6 +428,11 @@ namespace WinFormsApp1
                 directInput.Dispose();
                 directInput = null;
             }
+        }
+
+        private void comboBoxSpring_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

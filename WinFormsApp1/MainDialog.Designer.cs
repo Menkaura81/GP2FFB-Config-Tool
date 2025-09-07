@@ -40,6 +40,10 @@
             label2 = new Label();
             label1 = new Label();
             panel2 = new Panel();
+            numericUpDownVibration = new NumericUpDown();
+            label19 = new Label();
+            comboBoxVibration = new ComboBox();
+            label18 = new Label();
             comboBoxDamper = new ComboBox();
             comboBoxConstant = new ComboBox();
             comboBoxSpring = new ComboBox();
@@ -67,6 +71,7 @@
             ((System.ComponentModel.ISupportInitialize)numericUpDownDeadzone).BeginInit();
             ((System.ComponentModel.ISupportInitialize)numericUpDownForce).BeginInit();
             panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)numericUpDownVibration).BeginInit();
             ((System.ComponentModel.ISupportInitialize)numericUpDownBrakingScale).BeginInit();
             ((System.ComponentModel.ISupportInitialize)numericUpDownDamperScale).BeginInit();
             ((System.ComponentModel.ISupportInitialize)numericUpDownConstantScale).BeginInit();
@@ -177,6 +182,10 @@
             // panel2
             // 
             panel2.BorderStyle = BorderStyle.FixedSingle;
+            panel2.Controls.Add(numericUpDownVibration);
+            panel2.Controls.Add(label19);
+            panel2.Controls.Add(comboBoxVibration);
+            panel2.Controls.Add(label18);
             panel2.Controls.Add(comboBoxDamper);
             panel2.Controls.Add(comboBoxConstant);
             panel2.Controls.Add(comboBoxSpring);
@@ -192,8 +201,45 @@
             panel2.Controls.Add(label6);
             panel2.Location = new Point(157, 12);
             panel2.Name = "panel2";
-            panel2.Size = new Size(219, 161);
+            panel2.Size = new Size(300, 161);
             panel2.TabIndex = 1;
+            // 
+            // numericUpDownVibration
+            // 
+            numericUpDownVibration.Location = new Point(168, 97);
+            numericUpDownVibration.Minimum = new decimal(new int[] { 1, 0, 0, 0 });
+            numericUpDownVibration.Name = "numericUpDownVibration";
+            numericUpDownVibration.Size = new Size(43, 23);
+            numericUpDownVibration.TabIndex = 23;
+            numericUpDownVibration.TextAlign = HorizontalAlignment.Right;
+            numericUpDownVibration.Value = new decimal(new int[] { 100, 0, 0, 0 });
+            // 
+            // label19
+            // 
+            label19.AutoSize = true;
+            label19.Location = new Point(125, 100);
+            label19.Name = "label19";
+            label19.Size = new Size(37, 15);
+            label19.TabIndex = 22;
+            label19.Text = "Scale:";
+            // 
+            // comboBoxVibration
+            // 
+            comboBoxVibration.FormattingEnabled = true;
+            comboBoxVibration.Items.AddRange(new object[] { "false", "true" });
+            comboBoxVibration.Location = new Point(66, 97);
+            comboBoxVibration.Name = "comboBoxVibration";
+            comboBoxVibration.Size = new Size(53, 23);
+            comboBoxVibration.TabIndex = 21;
+            // 
+            // label18
+            // 
+            label18.AutoSize = true;
+            label18.Location = new Point(3, 100);
+            label18.Name = "label18";
+            label18.Size = new Size(55, 15);
+            label18.TabIndex = 20;
+            label18.Text = "Vibration";
             // 
             // comboBoxDamper
             // 
@@ -217,15 +263,16 @@
             // 
             comboBoxSpring.FormattingEnabled = true;
             comboBoxSpring.Items.AddRange(new object[] { "false", "true" });
-            comboBoxSpring.Location = new Point(100, 128);
+            comboBoxSpring.Location = new Point(236, 126);
             comboBoxSpring.Name = "comboBoxSpring";
             comboBoxSpring.Size = new Size(53, 23);
             comboBoxSpring.TabIndex = 17;
+            comboBoxSpring.SelectedIndexChanged += comboBoxSpring_SelectedIndexChanged;
             // 
             // label17
             // 
             label17.AutoSize = true;
-            label17.Location = new Point(3, 131);
+            label17.Location = new Point(138, 131);
             label17.Name = "label17";
             label17.Size = new Size(92, 15);
             label17.TabIndex = 16;
@@ -233,7 +280,7 @@
             // 
             // numericUpDownBrakingScale
             // 
-            numericUpDownBrakingScale.Location = new Point(101, 100);
+            numericUpDownBrakingScale.Location = new Point(89, 126);
             numericUpDownBrakingScale.Maximum = new decimal(new int[] { 500, 0, 0, 0 });
             numericUpDownBrakingScale.Minimum = new decimal(new int[] { 1, 0, 0, 0 });
             numericUpDownBrakingScale.Name = "numericUpDownBrakingScale";
@@ -245,7 +292,7 @@
             // label16
             // 
             label16.AutoSize = true;
-            label16.Location = new Point(3, 102);
+            label16.Location = new Point(3, 131);
             label16.Name = "label16";
             label16.Size = new Size(80, 15);
             label16.TabIndex = 14;
@@ -326,7 +373,7 @@
             panel3.Controls.Add(label9);
             panel3.Controls.Add(label8);
             panel3.Controls.Add(label7);
-            panel3.Location = new Point(12, 179);
+            panel3.Location = new Point(12, 180);
             panel3.Name = "panel3";
             panel3.Size = new Size(257, 112);
             panel3.TabIndex = 2;
@@ -389,7 +436,7 @@
             // label11
             // 
             label11.AutoSize = true;
-            label11.Location = new Point(12, 303);
+            label11.Location = new Point(12, 304);
             label11.Name = "label11";
             label11.Size = new Size(273, 15);
             label11.TabIndex = 3;
@@ -397,7 +444,7 @@
             // 
             // buttonSave
             // 
-            buttonSave.Location = new Point(283, 189);
+            buttonSave.Location = new Point(326, 190);
             buttonSave.Name = "buttonSave";
             buttonSave.Size = new Size(86, 34);
             buttonSave.TabIndex = 4;
@@ -407,7 +454,7 @@
             // 
             // buttonRun
             // 
-            buttonRun.Location = new Point(283, 236);
+            buttonRun.Location = new Point(326, 237);
             buttonRun.Name = "buttonRun";
             buttonRun.Size = new Size(86, 34);
             buttonRun.TabIndex = 5;
@@ -419,7 +466,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(387, 327);
+            ClientSize = new Size(465, 323);
             Controls.Add(buttonRun);
             Controls.Add(buttonSave);
             Controls.Add(label11);
@@ -436,6 +483,7 @@
             ((System.ComponentModel.ISupportInitialize)numericUpDownForce).EndInit();
             panel2.ResumeLayout(false);
             panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)numericUpDownVibration).EndInit();
             ((System.ComponentModel.ISupportInitialize)numericUpDownBrakingScale).EndInit();
             ((System.ComponentModel.ISupportInitialize)numericUpDownDamperScale).EndInit();
             ((System.ComponentModel.ISupportInitialize)numericUpDownConstantScale).EndInit();
@@ -481,5 +529,9 @@
         private ComboBox comboBoxDirectInput;
         private Button buttonRefresh;
         private Label label10;
+        private ComboBox comboBoxVibration;
+        private Label label18;
+        private Label label19;
+        private NumericUpDown numericUpDownVibration;
     }
 }
