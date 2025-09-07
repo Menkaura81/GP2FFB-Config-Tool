@@ -20,6 +20,8 @@ namespace WinFormsApp1
         private String damper;
         private int damperScale;
         private int brakingScale;
+        private String vibration;
+        private int vibrationScale;
         private String spring;
         // values line in .ini file
         private readonly int DEVICE_LINE = 2;
@@ -163,6 +165,8 @@ namespace WinFormsApp1
             constant = iniLines[CONSTANT_LINE].Substring("Constant: ".Length);
             constantScale = int.Parse(iniLines[CONSTANT_SCALE_LINE].Substring("Constant Scale: ".Length).Trim());
             brakingScale = int.Parse(iniLines[BRAKING_SCALE_LINE].Substring("Braking Scale: ".Length).Trim());
+            vibration = iniLines[VIBRATION_LINE].Substring("Vibration: ".Length);
+            vibrationScale = int.Parse(iniLines[VIBRATION_SCALE_LINE].Substring("Vibration Scale: ".Length).Trim());
             damper = iniLines[DAMPER_LINE].Substring("Damper: ".Length);
             damperScale = int.Parse(iniLines[DAMPER_SCALE_LINE].Substring("Damper Scale: ".Length).Trim());
             spring = iniLines[SPRING_LINE].Substring("Spring: ".Length);
@@ -183,6 +187,10 @@ namespace WinFormsApp1
             iniLines[CONSTANT_SCALE_LINE] = iniLines[CONSTANT_SCALE_LINE].Substring(0, pos + 1);
             pos = iniLines[BRAKING_SCALE_LINE].IndexOf(":");
             iniLines[BRAKING_SCALE_LINE] = iniLines[BRAKING_SCALE_LINE].Substring(0, pos + 1);
+            pos = iniLines[VIBRATION_LINE].IndexOf(":");
+            iniLines[VIBRATION_LINE] = iniLines[VIBRATION_LINE].Substring(0, pos + 1);
+            pos = iniLines[VIBRATION_SCALE_LINE].IndexOf(":");
+            iniLines[VIBRATION_SCALE_LINE] = iniLines[VIBRATION_SCALE_LINE].Substring(0, pos + 1);
             pos = iniLines[DAMPER_LINE].IndexOf(":");
             iniLines[DAMPER_LINE] = iniLines[DAMPER_LINE].Substring(0, pos + 1);
             pos = iniLines[DAMPER_SCALE_LINE].IndexOf(":");
@@ -231,8 +239,17 @@ namespace WinFormsApp1
             {
                 comboBoxConstant.SelectedIndex = 0;
             }
+            if (vibration.Equals("true"))
+            {
+                comboBoxVibration.SelectedIndex = 1;
+            }
+            else
+            {
+                comboBoxVibration.SelectedIndex = 0;
+            }
             numericUpDownConstantScale.Value = constantScale;
             numericUpDownBrakingScale.Value = brakingScale;
+            numericUpDownVibrationScale.Value = vibrationScale;
             if (damper.Equals("true"))
             {
                 comboBoxDamper.SelectedIndex = 1;
@@ -266,6 +283,8 @@ namespace WinFormsApp1
             constant = comboBoxConstant.SelectedItem.ToString();
             constantScale = (int)numericUpDownConstantScale.Value;
             brakingScale = (int)numericUpDownBrakingScale.Value;
+            vibration = comboBoxVibration.SelectedItem.ToString();
+            vibrationScale = (int)numericUpDownVibrationScale.Value;
             damper = comboBoxDamper.SelectedItem.ToString();
             damperScale = (int)numericUpDownDamperScale.Value;
             spring = comboBoxSpring.SelectedItem.ToString();
@@ -306,6 +325,14 @@ namespace WinFormsApp1
                 else if (i == BRAKING_SCALE_LINE)
                 {
                     ini += " " + brakingScale;
+                }
+                else if (i == VIBRATION_LINE)
+                {
+                    ini += " " + vibration;
+                }
+                else if (i == VIBRATION_SCALE_LINE)
+                {
+                    ini += " " + vibrationScale;
                 }
                 else if (i == DAMPER_LINE)
                 {

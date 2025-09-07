@@ -40,7 +40,7 @@
             label2 = new Label();
             label1 = new Label();
             panel2 = new Panel();
-            numericUpDownVibration = new NumericUpDown();
+            numericUpDownVibrationScale = new NumericUpDown();
             label19 = new Label();
             comboBoxVibration = new ComboBox();
             label18 = new Label();
@@ -71,7 +71,7 @@
             ((System.ComponentModel.ISupportInitialize)numericUpDownDeadzone).BeginInit();
             ((System.ComponentModel.ISupportInitialize)numericUpDownForce).BeginInit();
             panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)numericUpDownVibration).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)numericUpDownVibrationScale).BeginInit();
             ((System.ComponentModel.ISupportInitialize)numericUpDownBrakingScale).BeginInit();
             ((System.ComponentModel.ISupportInitialize)numericUpDownDamperScale).BeginInit();
             ((System.ComponentModel.ISupportInitialize)numericUpDownConstantScale).BeginInit();
@@ -182,7 +182,7 @@
             // panel2
             // 
             panel2.BorderStyle = BorderStyle.FixedSingle;
-            panel2.Controls.Add(numericUpDownVibration);
+            panel2.Controls.Add(numericUpDownVibrationScale);
             panel2.Controls.Add(label19);
             panel2.Controls.Add(comboBoxVibration);
             panel2.Controls.Add(label18);
@@ -204,15 +204,15 @@
             panel2.Size = new Size(300, 161);
             panel2.TabIndex = 1;
             // 
-            // numericUpDownVibration
+            // numericUpDownVibrationScale
             // 
-            numericUpDownVibration.Location = new Point(168, 97);
-            numericUpDownVibration.Minimum = new decimal(new int[] { 1, 0, 0, 0 });
-            numericUpDownVibration.Name = "numericUpDownVibration";
-            numericUpDownVibration.Size = new Size(43, 23);
-            numericUpDownVibration.TabIndex = 23;
-            numericUpDownVibration.TextAlign = HorizontalAlignment.Right;
-            numericUpDownVibration.Value = new decimal(new int[] { 100, 0, 0, 0 });
+            numericUpDownVibrationScale.Location = new Point(168, 97);
+            numericUpDownVibrationScale.Minimum = new decimal(new int[] { 1, 0, 0, 0 });
+            numericUpDownVibrationScale.Name = "numericUpDownVibrationScale";
+            numericUpDownVibrationScale.Size = new Size(43, 23);
+            numericUpDownVibrationScale.TabIndex = 23;
+            numericUpDownVibrationScale.TextAlign = HorizontalAlignment.Right;
+            numericUpDownVibrationScale.Value = new decimal(new int[] { 100, 0, 0, 0 });
             // 
             // label19
             // 
@@ -483,7 +483,7 @@
             ((System.ComponentModel.ISupportInitialize)numericUpDownForce).EndInit();
             panel2.ResumeLayout(false);
             panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)numericUpDownVibration).EndInit();
+            ((System.ComponentModel.ISupportInitialize)numericUpDownVibrationScale).EndInit();
             ((System.ComponentModel.ISupportInitialize)numericUpDownBrakingScale).EndInit();
             ((System.ComponentModel.ISupportInitialize)numericUpDownDamperScale).EndInit();
             ((System.ComponentModel.ISupportInitialize)numericUpDownConstantScale).EndInit();
@@ -532,6 +532,6 @@
         private ComboBox comboBoxVibration;
         private Label label18;
         private Label label19;
-        private NumericUpDown numericUpDownVibration;
+        private NumericUpDown numericUpDownVibrationScale;
     }
 }
